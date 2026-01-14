@@ -49,7 +49,7 @@ def run_benchmark():
         restored_wav = os.path.join(OUTPUT_DIR, base_name + ".restored_lossless.wav")
         subprocess.run([COMPRESSOR, "decode", lossless_out, restored_wav], capture_output=True)
         restored_md5 = get_md5(restored_wav)
-        integrity = "✅ MATCH" if orig_md5 == restored_md5 else "❌ FAIL"
+        integrity = "MATCH" if orig_md5 == restored_md5 else "FAIL"
         
         print(f"{base_name:<30} | {'Lossless':<10} | {ratio:>9.2f}x | {latency:>8.2f}ms | {integrity}")
 

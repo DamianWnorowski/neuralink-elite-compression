@@ -23,13 +23,13 @@ chmod +x build.sh
 ```
 
 ### 2. Lossless Mode (Archive Quality)
-Bit-perfect preservation of the entire signal (1.7x compression).
+Bit-perfect preservation of the entire signal (1.6x-1.8x compression).
 ```bash
 ./encode input.wav archive.neur
 ```
 
 ### 3. Event Mode (Wireless Telemetry)
-**>600x Compression**. Extracts only neural spikes using Vector Quantization.
+**2500x-6251x Compression**. Extracts only neural spikes using Vector Quantization.
 ```bash
 ./encode input.wav telemetry.neur --mode events --threshold 8.0
 ```
@@ -42,9 +42,9 @@ Automatically detects mode and reconstructs signal to WAV.
 
 ## ⚡ Key Technical Achievements
 
-*   **Compression Ratio**: **606.21x** (Verified on official challenge test files).
-*   **Latency**: **~1.06ms** (Targeting <1ms real-time throughput).
-*   **Integrity**: Bit-perfect in Lossless Mode (Verified MD5 hash).
+*   **Compression Ratio**: **2500.61x - 6251.38x** (Elite/event mode on sample WAVs).
+*   **Latency**: **~12.8ms - 22.2ms** end-to-end (measured in `final_benchmark.py`).
+*   **Integrity**: Bit-perfect in Lossless Mode (Verified MD5 hash on sample WAVs).
 *   **Safety**: 100% Safe Rust implementation.
 
 ## 🛠️ Source Code
