@@ -1,0 +1,122 @@
+[
+    {
+        "file": "neuralink_style.wav",
+        "threshold": 4.0,
+        "ratio": 284.87974683544303,
+        "latency": 11.757500004023314
+    },
+    {
+        "file": "neuralink_style.wav",
+        "threshold": 6.0,
+        "ratio": 606.2087542087542,
+        "latency": 10.228799976175651
+    },
+    {
+        "file": "neuralink_style.wav",
+        "threshold": 8.0,
+        "ratio": 2500.6111111111113,
+        "latency": 9.56070001120679
+    },
+    {
+        "file": "neuralink_style.wav",
+        "threshold": 10.0,
+        "ratio": 4866.054054054054,
+        "latency": 9.359499992569908
+    },
+    {
+        "file": "real_neural_signal.wav",
+        "threshold": 4.0,
+        "ratio": 4256.255319148936,
+        "latency": 12.326600000960752
+    },
+    {
+        "file": "real_neural_signal.wav",
+        "threshold": 6.0,
+        "ratio": 6251.375,
+        "latency": 10.602099995594472
+    },
+    {
+        "file": "real_neural_signal.wav",
+        "threshold": 8.0,
+        "ratio": 6251.375,
+        "latency": 10.5150000017602
+    },
+    {
+        "file": "real_neural_signal.wav",
+        "threshold": 10.0,
+        "ratio": 6251.375,
+        "latency": 9.349100000690669
+    },
+    {
+        "file": "synthetic_neural.wav",
+        "threshold": 4.0,
+        "ratio": 300.9468405215647,
+        "latency": 13.513000012608245
+    },
+    {
+        "file": "synthetic_neural.wav",
+        "threshold": 6.0,
+        "ratio": 502.58626465661644,
+        "latency": 14.311400009319186
+    },
+    {
+        "file": "synthetic_neural.wav",
+        "threshold": 8.0,
+        "ratio": 1648.5934065934066,
+        "latency": 12.345700000878423
+    },
+    {
+        "file": "synthetic_neural.wav",
+        "threshold": 10.0,
+        "ratio": 8109.2972972972975,
+        "latency": 11.14180000149645
+    },
+    {
+        "file": "physionet_eeg.wav",
+        "threshold": 4.0,
+        "ratio": 1296.9681077250177,
+        "latency": 41.11740001826547
+    },
+    {
+        "file": "physionet_eeg.wav",
+        "threshold": 6.0,
+        "ratio": 7219.0216962524655,
+        "latency": 34.36759999021888
+    },
+    {
+        "file": "physionet_eeg.wav",
+        "threshold": 8.0,
+        "ratio": 114376.375,
+        "latency": 34.30379999917932
+    },
+    {
+        "file": "physionet_eeg.wav",
+        "threshold": 10.0,
+        "ratio": 114376.375,
+        "latency": 35.19819999928586
+    },
+    {
+        "file": "physionet_motor_s002.wav",
+        "threshold": 4.0,
+        "ratio": 254.07792207792207,
+        "latency": 8.650800009490922
+    },
+    {
+        "file": "physionet_motor_s002.wav",
+        "threshold": 6.0,
+        "ratio": 611.375,
+        "latency": 8.897199993953109
+    },
+    {
+        "file": "physionet_motor_s002.wav",
+        "threshold": 8.0,
+        "ratio": 611.375,
+        "latency": 8.888299984391779
+    },
+    {
+        "file": "physionet_motor_s002.wav",
+        "threshold": 10.0,
+        "ratio": 611.375,
+        "latency": 9.344999998575076
+    }
+]
