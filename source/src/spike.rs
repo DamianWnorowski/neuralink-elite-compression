@@ -80,12 +80,21 @@ impl SpikeCompressor {
         buffer.write_f32::<BigEndian>(rms as f32)?;
         buffer.write_u32::<BigEndian>(events.len() as u32)?;
 
+        let mut payload = Vec::new();
         let mut last_ts = 0;
         for (ts, idx) in events {
-            buffer.write_u32::<BigEndian>(ts - last_ts)?; // Delta timestamp
-            buffer.write_u8(idx)?; // VQ index
+            payload.write_u32::<BigEndian>(ts - last_ts)?; // Delta timestamp
+            payload.write_u8(idx)?; // VQ index
             last_ts = ts;
         }
+
+        // Add CRC-32 for payload integrity
+        let mut hasher = crc32fast::Hasher::new();
+        hasher.update(&payload);
+        let checksum = hasher.finalize();
+        
+        buffer.write_u32::<BigEndian>(checksum)?;
+        buffer.extend_from_slice(&payload);
 
         Ok(buffer)
     }
@@ -94,6 +103,17 @@ impl SpikeCompressor {
         let mut cursor = Cursor::new(data);
         let _rms = cursor.read_f32::<BigEndian>()?;
         let event_count = cursor.read_u32::<BigEndian>()?;
+        let stored_checksum = cursor.read_u32::<BigEndian>()?;
+        
+        let payload_start = cursor.position() as usize;
+        let payload = &data[payload_start..];
+
+        // Verify Integrity
+        let mut hasher = crc32fast::Hasher::new();
+        hasher.update(payload);
+        if hasher.finalize() != stored_checksum {
+            anyhow::bail!("CRC-32 Verification Failed: Data Corruption Detected. Safe Abort.");
+        }
         
         let mut output = vec![0i32; total_samples];
         let mut current_ts = 0;

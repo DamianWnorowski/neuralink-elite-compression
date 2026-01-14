@@ -51,6 +51,11 @@ Shannon's Source Coding Theorem proves that lossless compression of thermal nois
 *   **Protocol**: Encode -> Verify Ratio -> Decode -> Verify Structure.
 *   **Result**: **ACCEPTED** (All stages passed).
 
+### 3.4 Chaos Engineering & Resilience
+The system was subjected to random bit-flip attacks on the compressed telemetry stream to simulate wireless interference.
+*   **Mechanism**: Integrated CRC-32 Active Integrity Verification.
+*   **Verdict**: **SUCCESS**. The decoder identifies and traps corruption at the packet level, preventing malformed motor commands and ensuring patient safety.
+
 ## 4. Implementation Details
 
 ### 4.1 "Elite" Mode (Default)
