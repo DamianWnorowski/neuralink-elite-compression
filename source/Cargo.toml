@@ -1,0 +1,13 @@
+[package]
+name = "neuralink_compressor"
+version = "2.0.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0"
+clap = { version = "4.4", features = ["derive"] }
+hound = "3.5"
+bitstream-io = "2.2"
+byteorder = "1.4"
+console = "0.15"
+indicatif = "0.17"
